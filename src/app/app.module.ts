@@ -14,7 +14,7 @@ import {
   DialogNewProfileComponent
 } from './Components/profile-bulder-lists/Profile-list/add-profile-button/New profile/dialog-new-profile/dialog-new-profile.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { LoginComponent } from './Components/Auth/login/login.component';
+import {LoginComponent} from './Components/Auth/login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { LoginComponent } from './Components/Auth/login/login.component';
     BrowserAnimationsModule,
     MaterialDesignModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

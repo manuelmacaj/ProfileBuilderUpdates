@@ -1,5 +1,7 @@
 .listProfiles {
   padding: 5px;
+  display: grid;
+  gap: 5px;
 }
 
 .mat-mdc-list-item-icon {
