@@ -1,0 +1,12 @@
+<div class="listProfiles">
+  <app-add-profile-button></app-add-profile-button>
+  <mat-selection-list>
+    <div mat-subheader>Le mie note</div>
+    <mat-list-item *ngFor="let nota of note" (click)="openElem(nota)">
+      <mat-icon matListItemIcon>note</mat-icon>
+      <span matListItemTitle>{{nota.titolo}}</span>
+      <span matListItemLine>Creato il {{nota.dataCreazione|date:'d/MM/YYYY'}}</span>
+      <span matListItemLine>Aggiornato il {{nota.dataModifica|date:'d/MM/YYYY hh:mm'}}</span>
+    </mat-list-item>
+  </mat-selection-list>
+</div>
