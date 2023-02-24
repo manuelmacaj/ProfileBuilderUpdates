@@ -1,6 +1,6 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ProfileBulderListsComponent } from './profile-bulder-lists.component';
+import {ProfileBulderListsComponent} from './profile-bulder-lists.component';
 
 describe('ProfileBulderListsComponent', () => {
   let component: ProfileBulderListsComponent;
@@ -8,9 +8,9 @@ describe('ProfileBulderListsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ProfileBulderListsComponent ]
+      declarations: [ProfileBulderListsComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ProfileBulderListsComponent);
     component = fixture.componentInstance;

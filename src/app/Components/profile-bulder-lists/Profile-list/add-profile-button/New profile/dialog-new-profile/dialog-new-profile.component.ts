@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {MatDialogRef} from "@angular/material/dialog";
 import {AddProfileButtonComponent} from "../../add-profile-button.component";
+import {FormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-dialog-new-profile',
@@ -8,14 +9,25 @@ import {AddProfileButtonComponent} from "../../add-profile-button.component";
   styleUrls: ['./dialog-new-profile.component.css']
 })
 export class DialogNewProfileComponent {
-  title: string | undefined
+  titleFormControl = new FormControl('',
+    [Validators.required,
+      Validators.pattern("^\\S$|^\\S[\\s\\S]*\\S$"),
+      Validators.min(4)]);
+
+
   constructor(private dialogRef: MatDialogRef<AddProfileButtonComponent>) {
   }
+
+  cancelDialog() {
+    this.dialogRef.close({esito: "no"});
+  }
+
   createTheElement() {
-    if (this.title == undefined) {
+    let title = this.titleFormControl.value
+    if (title == undefined) {
       alert("Immettere un titolo");
       return;
     }
-    this.dialogRef.close({data: this.title})
+    this.dialogRef.close({data: title, esito: "ok"})
   }
 }

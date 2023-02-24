@@ -16,12 +16,15 @@ export class AddProfileButtonComponent {
 
   protected newElemDialog() {
     // riferimento al dialog appena aperto
-    let dialogRef = this.matDialog.open(DialogNewProfileComponent);
+    let dialogRef = this.matDialog.open(DialogNewProfileComponent, {
+      disableClose: true,
+    });
 
     // prelevo il dato restituito alla chiusura dalla finestra di dialogo
     dialogRef.afterClosed().subscribe((res: any) => {
-      if (res != undefined)
-        this.title = res.data;
+      if (res.esito === "no")
+        return;
+      this.title = res.data;
       console.log(this.title)
     })
 
