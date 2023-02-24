@@ -14,13 +14,15 @@ import {
   DialogNewProfileComponent
 } from './Components/profile-bulder-lists/Profile-list/add-profile-button/New profile/dialog-new-profile/dialog-new-profile.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { LoginComponent } from './Components/Auth/login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProfileBulderListsComponent,
     AddProfileButtonComponent,
-    DialogNewProfileComponent
+    DialogNewProfileComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
