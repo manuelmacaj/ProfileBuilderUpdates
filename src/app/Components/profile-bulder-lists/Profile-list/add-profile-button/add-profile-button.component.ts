@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {DialogNewProfileComponent} from "./New profile/dialog-new-profile/dialog-new-profile.component";
 
@@ -8,6 +8,7 @@ import {DialogNewProfileComponent} from "./New profile/dialog-new-profile/dialog
   styleUrls: ['./add-profile-button.component.css']
 })
 export class AddProfileButtonComponent {
+  @Output() onAddTitle = new EventEmitter<string>();
   title = ''
 
   constructor(private matDialog: MatDialog) {
@@ -25,7 +26,9 @@ export class AddProfileButtonComponent {
       if (res.esito === "no")
         return;
       this.title = res.data;
-      console.log(this.title)
+      // console.log(this.title)
+      this.onAddTitle.emit(this.title);
+
     })
 
     // chiamo il servizio per tentare la creazione di un componente

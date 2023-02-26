@@ -15,6 +15,8 @@ import {
 } from './Components/profile-bulder-lists/Profile-list/add-profile-button/New profile/dialog-new-profile/dialog-new-profile.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from './Components/Auth/login/login.component';
+import { ProfileWorkComponent } from './Components/profile-bulder-lists/WorkflowProfile/profile-work/profile-work.component';
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -22,15 +24,17 @@ import {LoginComponent} from './Components/Auth/login/login.component';
     ProfileBulderListsComponent,
     AddProfileButtonComponent,
     DialogNewProfileComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileWorkComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MaterialDesignModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MaterialDesignModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MatMenuModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

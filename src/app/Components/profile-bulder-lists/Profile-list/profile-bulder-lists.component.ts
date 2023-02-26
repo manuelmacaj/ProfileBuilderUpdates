@@ -15,6 +15,17 @@ export class ProfileBulderListsComponent {
   ];
 
   protected openElem(nota: ProfileListsInterface) {
-    alert("Item selected: " + nota.titolo);
+
+  }
+
+  createNewElem(data: string) {
+    let newElem: ProfileListsInterface = {
+      idProfile: this.note.length + 1,
+      titolo: data,
+      dataCreazione: Date.now().toString(),
+      dataModifica: Date.now().toString()
+    }
+    this.note.push(newElem);
+    //console.table(this.note);
   }
 }

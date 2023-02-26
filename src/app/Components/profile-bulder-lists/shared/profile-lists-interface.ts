@@ -4,3 +4,6 @@ export interface ProfileListsInterface {
   dataCreazione: string;
   dataModifica: string;
 }
+export interface ProfileWorkflow {
+
+}

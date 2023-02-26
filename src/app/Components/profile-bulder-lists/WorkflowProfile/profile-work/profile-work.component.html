@@ -1,0 +1,32 @@
+<header>
+  <mat-toolbar>**Titolo lavoro corrente**</mat-toolbar>
+</header>
+<nav>
+  <button mat-button [matMenuTriggerFor]="fileMenu">File</button>
+  <mat-menu #fileMenu="matMenu" yPosition="above">
+    <button mat-menu-item>Esporta in formato txt</button>
+    <button mat-menu-item>Chiudi lavoro</button>
+  </mat-menu>
+
+  <button mat-button [matMenuTriggerFor]="profileMenu">Opzioni profilo</button>
+  <mat-menu #profileMenu="matMenu" yPosition="below">
+    <button mat-menu-item [matMenuTriggerFor]="creaProfiloMenu">Crea</button>
+    <mat-menu #creaProfiloMenu="matMenu">
+      <button mat-menu-item (click)="manageProfile('FormRecordSet', true)">Form recordset viewer</button>
+      <button mat-menu-item (click)="manageProfile('FormRecord', true)">Form record viewer</button>
+      <button mat-menu-item (click)="manageProfile('GridRecords', true)">Grid viewer</button>
+      <button mat-menu-item (click)="manageProfile('Cell', true)">Cell viewer</button>
+      <button mat-menu-item (click)="manageProfile('Field', true)">Field</button>
+      <button mat-menu-item (click)="manageProfile('[MSG]', true)">[MSG]</button>
+    </mat-menu>
+    <button mat-menu-item [matMenuTriggerFor]="cancellaProfiloMenu">Elimina</button>
+    <mat-menu #cancellaProfiloMenu="matMenu">
+      <button mat-menu-item (click)="manageProfile('FormRecordSet', false)">Form recordset viewer</button>
+      <button mat-menu-item (click)="manageProfile('FormRecord', false)">Form record viewer</button>
+      <button mat-menu-item (click)="manageProfile('GridRecords', false)">Grid viewer</button>
+      <button mat-menu-item (click)="manageProfile('Cell', false)">Cell viewer</button>
+      <button mat-menu-item (click)="manageProfile('Field', false)">Field</button>
+      <button mat-menu-item (click)="manageProfile('[MSG]', false)">[MSG]</button>
+    </mat-menu>
+  </mat-menu>
+</nav>

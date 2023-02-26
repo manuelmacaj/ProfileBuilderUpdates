@@ -1,5 +1,5 @@
 <div class="listProfiles">
-  <app-add-profile-button></app-add-profile-button>
+  <app-add-profile-button (onAddTitle)="createNewElem($event)"></app-add-profile-button>
   <mat-divider></mat-divider>
   <mat-selection-list>
     <div mat-subheader>Le mie note</div>
@@ -10,5 +10,4 @@
       <span matListItemLine>Aggiornato il {{nota.dataModifica|date:'d/MM/YYYY HH:mm'}}</span>
     </mat-list-item>
   </mat-selection-list>
-  <mat-divider></mat-divider>
 </div>
