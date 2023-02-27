@@ -6,7 +6,20 @@ import {Component} from '@angular/core';
   styleUrls: ['./profile-work.component.css']
 })
 export class ProfileWorkComponent {
-  
+  kindOfProfiles: string[] = [
+    'Form recordset viewer',
+    'Form record viewer',
+    'Grid recordset viewer',
+    'Field',
+    'Lookup viewer',
+    'Cell viewer',
+    'Combobox viewer',
+    'Checkbox viewer',
+    'Menu',
+    '[MSG]',
+  ]
+
+
   manageProfile(type: string, creation: boolean) {
     switch (creation) {
       case true:

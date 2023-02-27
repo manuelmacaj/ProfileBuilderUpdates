@@ -31,7 +31,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatProgressBarModule,
     MatSelectModule,
-    MatMenuModule
+    MatMenuModule,
   ],
   exports: [
     MatTabsModule,

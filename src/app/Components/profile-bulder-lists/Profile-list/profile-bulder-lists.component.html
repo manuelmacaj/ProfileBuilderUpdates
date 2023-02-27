@@ -1,5 +1,8 @@
 <div class="listProfiles">
-  <app-add-profile-button (onAddTitle)="createNewElem($event)"></app-add-profile-button>
+  <div class="buttonListProfiles">
+    <app-add-profile-button (onAddTitle)="createNewElem($event)"></app-add-profile-button>
+    <app-login></app-login>
+  </div>
   <mat-divider></mat-divider>
   <mat-selection-list>
     <div mat-subheader>Le mie note</div>

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ProfileListsInterface} from "../shared/profile-lists-interface";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Component({
   selector: 'app-profile-bulder-lists',
@@ -14,7 +15,17 @@ export class ProfileBulderListsComponent {
     {idProfile: 4, titolo: "PROVA TILOLO", dataCreazione: Date.now().toString(), dataModifica: Date.now().toString()},
   ];
 
+  constructor(private matSnackbar: MatSnackBar) {
+
+  }
+
   protected openElem(nota: ProfileListsInterface) {
+    // prelevo id
+    // go -> .../titolo/id
+    console.table(nota);
+    let message: string = "Apertura nota '" + nota.titolo + "' in corso...";
+    let action: string = "Ok";
+    this.createSnackBar(message, action);
 
   }
 
@@ -25,7 +36,23 @@ export class ProfileBulderListsComponent {
       dataCreazione: Date.now().toString(),
       dataModifica: Date.now().toString()
     }
+    const found = this.note.find((currentElem: ProfileListsInterface) =>
+      currentElem.titolo.toLowerCase().trim() === newElem.titolo.toLowerCase().trim())
+
+    if (found != undefined) {
+      alert("Nota già esistente.");
+      return;
+    }
     this.note.push(newElem);
-    //console.table(this.note);
   }
+
+  protected createSnackBar(message: string, action: string) {
+    this.matSnackbar.open(message, action, {
+      duration: 2000,
+      horizontalPosition: "start",
+      politeness: "assertive",
+      direction: "ltr"
+    });
+  }
+
 }

@@ -3,7 +3,10 @@
   display: grid;
   gap: 5px;
 }
-
+buttonListProfiles {
+  display: flex;
+  flex-wrap: nowrap;
+}
 .mat-mdc-list-item-icon {
   color: rgba(0, 0, 0, 0.54);
 }
