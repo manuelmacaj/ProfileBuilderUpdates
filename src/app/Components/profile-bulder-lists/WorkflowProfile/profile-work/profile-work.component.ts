@@ -19,7 +19,6 @@ export class ProfileWorkComponent {
     '[MSG]',
   ]
 
-
   manageProfile(type: string, creation: boolean) {
     switch (creation) {
       case true:
@@ -38,6 +37,5 @@ export class ProfileWorkComponent {
   deleteProfile(type: String) {
     console.log("Deletion: " + type);
   }
-
 
 }
