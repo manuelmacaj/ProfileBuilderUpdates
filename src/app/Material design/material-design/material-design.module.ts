@@ -13,6 +13,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatTreeModule} from "@angular/material/tree";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 
 @NgModule({
@@ -47,6 +49,8 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     MatCardModule,
     MatProgressBarModule,
     MatSelectModule,
+    MatTreeModule,
+    MatExpansionModule
   ]
 })
 export class MaterialDesignModule {

@@ -17,6 +17,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {LoginComponent} from './Components/Auth/login/login.component';
 import { ProfileWorkComponent } from './Components/profile-bulder-lists/WorkflowProfile/profile-work/profile-work.component';
 import {MatMenuModule} from "@angular/material/menu";
+import { TreeProfilesComponent } from './Components/profile-bulder-lists/WorkflowProfile/tree-profiles/tree-profiles.component';
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import {MatMenuModule} from "@angular/material/menu";
     AddProfileButtonComponent,
     DialogNewProfileComponent,
     LoginComponent,
-    ProfileWorkComponent
+    ProfileWorkComponent,
+    TreeProfilesComponent
   ],
     imports: [
         BrowserModule,
@@ -34,6 +37,7 @@ import {MatMenuModule} from "@angular/material/menu";
         FormsModule,
         ReactiveFormsModule,
         MatMenuModule,
+        MatTooltipModule,
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,25 @@
+{
+  "FormRecordsetViewer": [
+    {
+      "IDNotaAggiunta": 1,
+      "IDFNota": 1,
+      "IDFTipoProfilo": 1,
+      "NomeProfilo": "TP_INFOTECPARAM_V"
+    },
+    {
+      "IDNotaAggiunta": 2,
+      "IDFNota": 1,
+      "IDFTipoProfilo": 1,
+      "NomeProfilo": "GE_ARTTARTICOLOCODICE1_V"
+    }
+  ],
+  "FormRecordViewer": [
+    {
+      "IDNotaAggiunta": 1,
+      "IDFNota": 1,
+      "IDFTipoProfilo": 1,
+      "NomeProfilo": "TP_INFOTECPARAM_V"
+    }
+  ],
+  "GriRecordsetViewer": []
+}

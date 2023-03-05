@@ -8,11 +8,32 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./profile-bulder-lists.component.css']
 })
 export class ProfileBulderListsComponent {
+  seeButtons = false;
   note: ProfileListsInterface[] = [
-    {idProfile: 1, titolo: "LPVAGE0095", dataCreazione: Date.now().toString(), dataModifica: Date.now().toString()},
-    {idProfile: 2, titolo: "LPTEPA0020", dataCreazione: Date.now().toString(), dataModifica: Date.now().toString()},
-    {idProfile: 3, titolo: "TASK990", dataCreazione: Date.now().toString(), dataModifica: Date.now().toString()},
-    {idProfile: 4, titolo: "PROVA TILOLO", dataCreazione: Date.now().toString(), dataModifica: Date.now().toString()},
+    {
+      IDNota: 1,
+      TitoloNota: "LPVAGE0095",
+      DataCreazione: new Date().toISOString(),
+      DataModifica: Date.now().toString()
+    },
+    {
+      IDNota: 2,
+      TitoloNota: "LPTEPA0020",
+      DataCreazione: new Date().toISOString(),
+      DataModifica: Date.now().toString()
+    },
+    {
+      IDNota: 3,
+      TitoloNota: "TASK990",
+      DataCreazione: new Date().toISOString(),
+      DataModifica: Date.now().toString()
+    },
+    {
+      IDNota: 4,
+      TitoloNota: "ProvaTitolo",
+      DataCreazione: new Date().toISOString(),
+      DataModifica: Date.now().toString()
+    },
   ];
 
   constructor(private matSnackbar: MatSnackBar) {
@@ -23,7 +44,7 @@ export class ProfileBulderListsComponent {
     // prelevo id
     // go -> .../titolo/id
     console.table(nota);
-    let message: string = "Apertura nota '" + nota.titolo + "' in corso...";
+    let message: string = "Apertura nota '" + nota.TitoloNota + "' in corso...";
     let action: string = "Ok";
     this.createSnackBar(message, action);
 
@@ -31,13 +52,13 @@ export class ProfileBulderListsComponent {
 
   createNewElem(data: string) {
     let newElem: ProfileListsInterface = {
-      idProfile: this.note.length + 1,
-      titolo: data,
-      dataCreazione: Date.now().toString(),
-      dataModifica: Date.now().toString()
+      IDNota: this.note.length + 1,
+      TitoloNota: data,
+      DataCreazione: Date.now().toString(),
+      DataModifica: Date.now().toString()
     }
     const found = this.note.find((currentElem: ProfileListsInterface) =>
-      currentElem.titolo.toLowerCase().trim() === newElem.titolo.toLowerCase().trim())
+      currentElem.TitoloNota.toLowerCase().trim() === newElem.TitoloNota.toLowerCase().trim())
 
     if (found != undefined) {
       alert("Nota già esistente.");
@@ -54,5 +75,4 @@ export class ProfileBulderListsComponent {
       direction: "ltr"
     });
   }
-
 }
