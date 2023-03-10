@@ -1,4 +1,6 @@
 import {Component} from '@angular/core';
+import {MatDialog} from "@angular/material/dialog";
+import {InsDelProfileComponent} from "./ins-del-profile/ins-del-profile.component";
 
 @Component({
   selector: 'app-profile-work',
@@ -7,17 +9,22 @@ import {Component} from '@angular/core';
 })
 export class ProfileWorkComponent {
   kindOfProfiles: string[] = [
-    'Form recordset viewer',
-    'Form record viewer',
-    'Grid recordset viewer',
+    'FormRecordsetViewer',
+    'FormRecordViewer',
+    'GridRecordsetViewer',
     'Field',
-    'Lookup viewer',
-    'Cell viewer',
-    'Combobox viewer',
-    'Checkbox viewer',
-    'Menu',
+    'LookupViewer',
+    'CellViewer',
+    'ComboboxViewer',
+    'CheckBoxViewer',
     '[MSG]',
+    //'Menu',
   ]
+  matMessage: string = "";
+  nomeProfiloTipo: string = "";
+
+  constructor(private matDialog: MatDialog) {
+  }
 
   manageProfile(type: string, creation: boolean) {
     switch (creation) {
@@ -31,11 +38,26 @@ export class ProfileWorkComponent {
   }
 
   createProfile(type: string) {
-    console.log("Creation: " + type);
+    this.matMessage = "new " + type;
+
+    let dialogRef = this.matDialog.open(InsDelProfileComponent, {
+      disableClose: true,
+      data: {
+        title: "Crea",
+        message: this.matMessage,
+        mode: "insert"
+      }
+    })
+
+    dialogRef.afterClosed().subscribe((value: any) => {
+      if (value.esito === "no")
+        return;
+      this.nomeProfiloTipo = value.nomeProfilo + "|" + type;
+    })
   }
 
   deleteProfile(type: String) {
-    console.log("Deletion: " + type);
-  }
+    this.matMessage = "Elimina: " + type;
 
+  }
 }

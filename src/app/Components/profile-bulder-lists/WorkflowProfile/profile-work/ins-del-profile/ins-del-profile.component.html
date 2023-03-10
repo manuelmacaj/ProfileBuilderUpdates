@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{dataFromParent.title}}</h1>
+
+<mat-dialog-content>
+  <p>{{dataFromParent.message}}</p>
+
+  <mat-form-field appearance="outline" *ngIf="dataFromParent.mode === 'insert'">
+    <mat-label>Inserisci il nome</mat-label>
+    <input matInput [formControl]="profile">
+  </mat-form-field>
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button color="warn" (click)="closeDialog()"> Annulla</button>
+  <button mat-button (click)="saveInformation()" [disabled]="profile.invalid">Crea</button>
+</mat-dialog-actions>
+
+<!-- (click)="cancelDialog()"-->

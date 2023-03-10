@@ -19,6 +19,7 @@ import { ProfileWorkComponent } from './Components/profile-bulder-lists/Workflow
 import {MatMenuModule} from "@angular/material/menu";
 import { TreeProfilesComponent } from './Components/profile-bulder-lists/WorkflowProfile/tree-profiles/tree-profiles.component';
 import {MatTooltipModule} from "@angular/material/tooltip";
+import { InsDelProfileComponent } from './Components/profile-bulder-lists/WorkflowProfile/profile-work/ins-del-profile/ins-del-profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatTooltipModule} from "@angular/material/tooltip";
     DialogNewProfileComponent,
     LoginComponent,
     ProfileWorkComponent,
-    TreeProfilesComponent
+    TreeProfilesComponent,
+    InsDelProfileComponent
   ],
     imports: [
         BrowserModule,

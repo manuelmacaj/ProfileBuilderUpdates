@@ -3,24 +3,24 @@
     <button mat-button (click)="accordion.openAll()" matTooltip="Espandi tutti i pannelli">Expand All</button>
     <button mat-button (click)="accordion.closeAll()" matTooltip="Chiudi tutti i pannelli">Collapse All</button>
   </div>
-  <mat-accordion multi>
+  <mat-accordion>
     <!--Lista form recordset viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].FormRecordsetViewer=== undefined">
+    <mat-expansion-panel [disabled]="formRecSet === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title> FormRecordsetViewer</mat-panel-title>
         <mat-panel-description> Lista dei FormRecordsetViewer</mat-panel-description>
       </mat-expansion-panel-header>
 
-      <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].FormRecordsetViewer">
-          <span matListItemLine>{{elem.NomeProfilo}}</span>
+      <mat-selection-list>
+        <mat-list-item *ngFor="let elem of formRecSet" (click)="changeState(elem)">
+          <span matListItemTitle>{{elem.NomeProfilo}}</span>
         </mat-list-item>
-      </mat-list>
+      </mat-selection-list>
 
     </mat-expansion-panel>
     <!--Lista form record viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].FormRecordViewer === undefined">
+    <mat-expansion-panel [disabled]="formRec === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title> FormRecordsetViewer</mat-panel-title>
@@ -28,14 +28,14 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].FormRecordViewer">
+        <mat-list-item *ngFor="let elem of formRec">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
 
     </mat-expansion-panel>
     <!--Lista grid recordset viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].GridRecordsetViewer === undefined">
+    <mat-expansion-panel [disabled]="grid === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>GridRecordsetViewer</mat-panel-title>
@@ -43,14 +43,14 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].GridRecordsetViewer">
+        <mat-list-item *ngFor="let elem of grid">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
 
     </mat-expansion-panel>
     <!--Lista dei Fields-->
-    <mat-expansion-panel [disabled]="listaProfili[0].Fields === undefined">
+    <mat-expansion-panel [disabled]="fieldView === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>Fields</mat-panel-title>
@@ -58,14 +58,14 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].Fields">
+        <mat-list-item *ngFor="let elem of fieldView">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
 
     </mat-expansion-panel>
     <!--Lista dei Lookup viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].LookupViewer === undefined">
+    <mat-expansion-panel [disabled]="lookupV === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>LookupViewer</mat-panel-title>
@@ -73,14 +73,14 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].LookupViewer">
+        <mat-list-item *ngFor="let elem of lookupV">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
 
     </mat-expansion-panel>
     <!--Lista dei cell viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].CellViewer === undefined">
+    <mat-expansion-panel [disabled]="cell === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>CellViewer</mat-panel-title>
@@ -88,13 +88,13 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].CellViewer">
+        <mat-list-item *ngFor="let elem of cell">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
     </mat-expansion-panel>
     <!--Lista dei combobox viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].ComboboxViewer === undefined">
+    <mat-expansion-panel [disabled]="comboboxV === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>ComboboxViewer</mat-panel-title>
@@ -102,14 +102,14 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].ComboboxViewer">
+        <mat-list-item *ngFor="let elem of comboboxV">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
 
     </mat-expansion-panel>
     <!--Lista dei checkbox viewer-->
-    <mat-expansion-panel [disabled]="listaProfili[0].CheckBoxViewer === undefined">
+    <mat-expansion-panel [disabled]="checkBoxV === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>CheckBoxViewer</mat-panel-title>
@@ -117,14 +117,14 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].CheckBoxViewer">
+        <mat-list-item *ngFor="let elem of checkBoxV">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
 
     </mat-expansion-panel>
     <!--Lista messaggi-->
-    <mat-expansion-panel [disabled]="listaProfili[0].MSG === undefined">
+    <mat-expansion-panel [disabled]="MSG === undefined">
 
       <mat-expansion-panel-header>
         <mat-panel-title>[MSG]</mat-panel-title>
@@ -132,7 +132,7 @@
       </mat-expansion-panel-header>
 
       <mat-list>
-        <mat-list-item *ngFor="let elem of listaProfili[0].MSG">
+        <mat-list-item *ngFor="let elem of MSG">
           <span matListItemLine>{{elem.NomeProfilo}}</span>
         </mat-list-item>
       </mat-list>
